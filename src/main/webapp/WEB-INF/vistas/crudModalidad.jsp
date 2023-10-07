@@ -74,50 +74,32 @@
 		                        <!-- Step 1 -->
 		                        <div class="panel panel-default">
 		                            <div class="panel-heading">
-		                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#steps" href="#stepOne">Datos de Modalidad</a></h4>
+		                                <h4 class="panel-title"><a data-toggle="collapse" data-parent="#steps" href="#stepOne">Datos del Empleado</a></h4>
 		                            </div>
 		                            <div id="stepOne" class="panel-collapse collapse in">
 		                                <div class="panel-body">
 		                                     <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_reg_nombre">Nombre</label>
+		                                        <label class="col-lg-3 control-label" for="id_reg_nombres">Nombres</label>
 		                                        <div class="col-lg-8">
-													<input class="form-control" id="id_reg_nombre" name="nombre" placeholder="Ingrese el Nombre" type="text" maxlength="20"/>
+													<input class="form-control" id="id_reg_nombres" name="nombres" placeholder="Ingrese el Nombre" type="text" maxlength="40"/>
 		                                        </div>
 		                                    </div>
 		                                    <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_reg_num_hombres"># Hombres</label>
-		                                        <div class="col-lg-3">
-													<input class="form-control" id="id_reg_num_hombres" name="numHombres" placeholder="Ingrese el número de hombres" type="text" maxlength="2"/>
+		                                        <label class="col-lg-3 control-label" for="id_reg_apellidos">Apellidos</label>
+		                                        <div class="col-lg-8">
+													<input class="form-control" id="id_reg_apellidos" name="apellidos" placeholder="Ingrese el apellidos" type="text" maxlength="40"/>
 		                                        </div>
 		                                    </div>
 		                                    <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_reg_num_mujeres"># Mujeres</label>
+		                                        <label class="col-lg-3 control-label" for="id_reg_fecha_nacimiento">F.Nacimiento</label>
 		                                        <div class="col-lg-3">
-													<input class="form-control" id="id_reg_num_mujeres" name="numMujeres" placeholder="Ingrese el número de mujeres" type="text" maxlength="2"/>
-		                                        </div>
-		                                    </div>		   
-		                                    <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_reg_maxima">Edad Máxima</label>
-		                                        <div class="col-lg-3">
-													<input class="form-control" id="id_reg_maxima" name="edadMaxima" placeholder="Ingrese la edad máxima" type="text" maxlength="2"/>
+													<input class="form-control" id="id_reg_fecha_nacimientos" name="fechaNacimiento" type="date"/>
 		                                        </div>
 		                                    </div>   
 		                                    <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_reg_minima">Edad Mínima</label>
+		                                        <label class="col-lg-3 control-label" for="id_reg_pais">Pais</label>
 		                                        <div class="col-lg-3">
-													<input class="form-control" id="id_reg_minima" name="edadMinima" placeholder="Ingrese la edad mínima" type="text" maxlength="2"/>
-		                                        </div>
-		                                    </div>   
-		                                    <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_reg_sede">Sede</label>
-		                                        <div class="col-lg-8">
-													<input class="form-control" id="id_reg_sede" name="sede" placeholder="Ingrese la sede" type="text" maxlength="20"/>
-		                                        </div>
-		                                    </div>    
-		                                    <div class="form-group">
-		                                        <label class="col-lg-3 control-label" for="id_reg_deporte">Deporte</label>
-		                                        <div class="col-lg-3">
-													 <select id="id_reg_deporte" name="deporte" class='form-control'>
+													 <select id="id_reg_pais" name="pais" class='form-control'>
 							                            	<option value=" ">[Seleccione]</option>    
 							                         </select>
 		                                        </div>
