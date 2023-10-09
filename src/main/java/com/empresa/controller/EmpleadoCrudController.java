@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -66,6 +67,42 @@ public class EmpleadoCrudController {
 			List<Empleado> lista = empleadoService.listaPorNombreApellidoLike("%");
 			map.put("lista", lista);
 			map.put("mensaje", "Registro exitoso");
+		}
+		return map;
+	}
+	
+	@PostMapping("/actualizaCrudEmpleado")
+	@ResponseBody
+	public Map<?, ?> actualiza(Empleado obj) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		  
+		Optional<Empleado> optEmpleado= empleadoService.buscaEmpleado(obj.getIdEmpleado());
+		obj.setFechaRegistro(optEmpleado.get().getFechaRegistro());
+		obj.setFechaActualizacion(optEmpleado.get().getFechaActualizacion());
+		obj.setEstado(optEmpleado.get().getEstado());
+		Empleado objSalida = empleadoService.actualizaEmpleado(obj);
+		if (objSalida == null) {
+			map.put("mensaje", "Error en actualizar");
+		} else {
+			List<Empleado> lista = empleadoService.listaPorNombreApellidoLike("%");
+			map.put("lista", lista);
+			map.put("mensaje", "Actualización exitosa");
+		}
+		return map;
+	}
+	
+	@ResponseBody
+	@PostMapping("/eliminaCrudEmpleado")
+	public Map<?, ?> elimina(int id) {
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		Empleado objEmpleado= empleadoService.buscaEmpleado(id).get();  
+		objEmpleado.setEstado( objEmpleado.getEstado() == 1 ? 0 : 1);
+		Empleado objSalida = empleadoService.actualizaEmpleado(objEmpleado);
+		if (objSalida == null) {
+			map.put("mensaje", "Error en actualizar");
+		} else {
+			List<Empleado> lista = empleadoService.listaPorNombreApellidoLike("%");
+			map.put("lista", lista);
 		}
 		return map;
 	}
